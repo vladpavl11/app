@@ -15,7 +15,7 @@ class Sidebar extends \Magento\Checkout\Block\Cart\Sidebar
     {
         return [
             'shoppingCartUrl' => $this->getShoppingCartUrl(),
-            'checkoutUrl' => $this->getUrl('checkout/samples'), //$this->getCheckoutUrl(),
+            'checkoutUrl' => $this->getCheckoutUrl(),
             'updateItemQtyUrl' => $this->getUpdateItemQtyUrl(),
             'updateItemOptionUrl' => $this->getUpdateItemOptionUrl(),
             'removeItemUrl' => $this->getRemoveItemUrl(),

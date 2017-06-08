@@ -60,6 +60,7 @@ $(".hamburger").on("click", function() {
 	}
 });
 
+
 //////////////// scroll events detail page ///////////////
 
 var scrollerswitch_active = false;

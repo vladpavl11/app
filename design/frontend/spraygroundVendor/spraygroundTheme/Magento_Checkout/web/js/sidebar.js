@@ -15,6 +15,7 @@ define([
     'mage/collapsible',
     'mage/cookies'
 ], function ($, authenticationPopup, customerData, alert, confirm) {
+console.log('sidebar');
 
     $.widget('mage.sidebar', {
         options: {

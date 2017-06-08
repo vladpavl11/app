@@ -12,7 +12,7 @@ define([
     'sidebar'
 ], function (Component, customerData, $, ko, _, fabMiniCartToggle) {
     'use strict';
-
+console.log('cartmini');
     var sidebarInitialized = false,
         addToCartCalls = 0,
         promoHtml = '',
@@ -30,6 +30,7 @@ define([
         if (miniCart.data('mageSidebar')) {
             miniCart.sidebar('update');
         }
+console.log('cartmini');
 
         if (!$('[data-role=product-item]').length) {
             return false;

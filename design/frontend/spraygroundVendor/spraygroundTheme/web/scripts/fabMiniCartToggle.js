@@ -18,7 +18,7 @@
    */
    // Don't open the cart of res. smaller or equal to
    var BREAKPOINT = 1023;
-
+console.log('test');
    function closeCart(ev) {
      if (ev && ev.preventDefault) {
        ev.preventDefault();

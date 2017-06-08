@@ -12,6 +12,7 @@ define([
       _create: function () {
           this._initContent();
       },
+console.log('cart');
 
       _updateItemOption: function(elem) {
         var requestData = {

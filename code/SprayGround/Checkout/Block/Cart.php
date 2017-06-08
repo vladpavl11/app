@@ -27,10 +27,8 @@ class Cart extends \Magento\Checkout\Block\Cart
       \Magento\Catalog\Model\ResourceModel\Url $catalogUrlBuilder,
       \Magento\Checkout\Helper\Cart $cartHelper,
       \Magento\Framework\App\Http\Context $httpContext,
-      \SprayGround\Checkout\Model\Samples $samplesModel,
       array $data = []
   ) {
-      $this->samplesModel = $samplesModel;
       parent::__construct(
         $context,
         $customerSession,
@@ -54,28 +52,9 @@ class Cart extends \Magento\Checkout\Block\Cart
       return parent::_prepareLayout();
   }
 
-  public function getItems()
-  {
-    if ($this->samplesModel->getNonSamplesInCart()) {
-      return parent::getItems();
-    }
-    return [];
-  }
+ 
 
-  public function getCustomItems($isSample = false)
-  {
-    $cartItems = $this->getQuote()->getAllVisibleItems();
-    $items = [];
-    foreach($cartItems as $item) {
-      if ((bool)$item->getProduct()->getIsSample() == $isSample) {
-        $items[] = $item;
-      }
-    }
-    return $items;
-  }
+ 
 
-  public function getSampleItems()
-  {
-    return $this->getCustomItems(true);
-  }
+  
 }
