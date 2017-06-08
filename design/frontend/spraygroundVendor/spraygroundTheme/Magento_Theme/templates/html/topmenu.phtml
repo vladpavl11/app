@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<nav class="navigation" data-action="navigation">
+	<a data-toggle="collapse" href="#shop-nav" class="nav_element" id="shop-nav-link">SHOP<span class="nav-toggle-icon"><i class="fa">+</i></span></a>
+	    <ul data-mage-init='{"menu":{"delay":150,"responsive":false, "expanded":false, "position":{"my":"left top","at":"left bottom"}}}'>
+	        <?php /* @escapeNotVerified */ echo $_menu; ?>
+	        <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
+	    </ul>
+    <a class="nav_element"><?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('side_nav')->toHtml();?></a>
+</nav>
+
+<!-- 
+  <?php $_categories = $this->helper('Magento\Catalog\Helper\Category')
+                    ->getStoreCategories();
+foreach($_categories as $_category): 
+    echo $_category->getName(); 
+endforeach; ?>  -->
+
+
+<ul>
+<li></li>
+</ul>

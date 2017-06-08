@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+			<referenceBlock name="product.info.addto" remove="true"/>
+			<referenceBlock name="product.info.review" remove="true"/>
+			<referenceBlock name="product.info.upsell" remove="true"/>
+			<referenceBlock name="product.price.tier" remove="true"/>
+			<referenceBlock name="product.info.mailto" remove="true"/>
+			<referenceBlock name="product.info.details" remove="true"/>
+			<referenceContainer name="product.info.stock.sku" remove="true"/>
+			
+		<move element="page.main.title" destination="leftside.description" before="product.info.sku"/>
+		 <referenceContainer name="content">
+				 <container name="leftside.description.wrapper" as="leftsideDescriptionwrapper" label="Leftside Description wrapper" htmlTag="div" htmlClass="leftDescriptionwrapper col-md-3" before="-">
+				 		<container name="leftside.description.container" as="leftsideDescriptioncontainer" label="Leftside Description container" htmlTag="div" htmlClass="leftDescriptiocontainer follow">
+				 			<container name="leftside.descriptionInner" as="leftsidedescriptionInner" label="Leftside descriptionInner" htmlTag="div" htmlClass="leftdescriptionInner ">
+							 	<container name="leftside.description" as="leftsideDescription" label="Leftside Description" htmlTag="div" htmlClass="leftDescription  ">
+							 		
+									  <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" >
+					                        <arguments>
+					                            <argument name="at_call" xsi:type="string">getSku</argument>
+					                            <argument name="at_code" xsi:type="string">sku</argument>
+					                            <argument name="css_class" xsi:type="string">sku</argument>
+					                            <argument name="at_label" xsi:type="string">default</argument>
+					                            <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+					                        </arguments>
+					                   </block>
+					                    <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.overview" template="product/view/attribute.phtml" group="detailed_info" >
+						                    <arguments>
+						                        <argument name="at_call" xsi:type="string">getShortDescription</argument>
+						                        <argument name="at_code" xsi:type="string">short_description</argument>
+						                        <argument name="css_class" xsi:type="string">overview</argument>
+						                        <argument name="at_label" translate="true" xsi:type="string">none</argument>
+						                        <argument name="title" translate="true" xsi:type="string">Overview</argument>
+						                        <argument name="add_attribute" xsi:type="string">itemprop="description"</argument>
+						                    </arguments>
+						                </block>
+								</container>
+						</container>	
+					</container>			
+				</container>
+
+				<container name="product.info.media" htmlTag="div" htmlClass="product-media col-md-6 col-xs-12" before="product.info.main">
+				<block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="product/view/gallery.phtml"/>
+				</container>
+
+				<container name="product.info.main.wrapper" htmlTag="div" htmlClass="product-price-wrapper col-md-3" after="product.info.media">
+				    <container name="product.info.main" htmlTag="div" htmlClass="product-price followRight col-md-2" >
+				            
+							<block class="Magento\Catalog\Block\Product\View\Attributes" name="product.custom.message" template="product/view/customMessage.phtml" />
+
+							<block class="Magento\Catalog\Pricing\Render" name="product.price.final" before="-">
+				                <arguments>
+				                    <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+				                    <argument name="price_type_code" xsi:type="string">final_price</argument>
+				                    <argument name="zone" xsi:type="string">item_view</argument>
+				                </arguments>
+				            </block>
+				            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.free.shipping" template="product/view/freeshipping.phtml"  />
+
+				            <block class="Magento\Catalog\Block\Product\View" name="product.info" template="product/view/form.phtml" after="product.free.shipping">
+				            <container name="product.info.form.content" as="product_info_form_content" after="product.free.shipping">
+				                <block class="Magento\Catalog\Block\Product\View" name="product.info.addtocart" as="addtocart" template="product/view/addtocart.phtml"/>
+				            </container>
+
+
+				            <block class="Magento\Framework\View\Element\Template" name="product.info.form.options" as="options_container">
+				                <block class="Magento\Catalog\Block\Product\View" name="product.info.options.wrapper" as="product_options_wrapper" template="product/view/options/wrapper.phtml">
+				                    <block class="Magento\Catalog\Block\Product\View\Options" name="product.info.options" as="product_options" template="product/view/options.phtml">
+				                        <block class="Magento\Catalog\Block\Product\View\Options\Type\DefaultType" as="default" template="product/view/options/type/default.phtml"/>
+				                        <block class="Magento\Catalog\Block\Product\View\Options\Type\Text" as="text" template="product/view/options/type/text.phtml"/>
+				                        <block class="Magento\Catalog\Block\Product\View\Options\Type\Select" as="select" template="product/view/options/type/select.phtml"/>
+				                    </block>
+				                    <block class="Magento\Framework\View\Element\Html\Calendar" name="html_calendar" as="html_calendar" template="Magento_Theme::js/calendar.phtml"/>
+				                </block>
+				                <block class="Magento\Catalog\Block\Product\View" name="product.info.options.wrapper.bottom" as="product_options_wrapper_bottom" template="product/view/options/wrapper/bottom.phtml">
+				                    <block class="Magento\Catalog\Block\Product\View" name="product.info.addtocart.additional" as="product.info.addtocart" template="product/view/addtocart.phtml"/>
+				                </block>
+				            </block>
+
+				        </block>
+				    </container>
+				</container>
+
+				<container name="bottomContainerWrapper" as="bottomContainerWrapper" label="bottomContainerWrapper" htmlTag="div" htmlClass="bottomContainerWrapper row clearfix" after="-">
+
+					<container name="bottomContainer" as="bottomContainer" label="bottomContainer" htmlTag="div" htmlClass="bottomContainer" after="-">
+						<block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.footer" template="product/view/detailImageFooter.phtml"/>
+						
+					</container>
+				</container>
+				<container name="relatedProducts" as="relatedProducts" label="relatedProducts" htmlTag="div" htmlClass="relatedProducts clearfix" after="bottomContainerWrapper">
+					<block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Magento_Catalog::product/list/items.phtml">
+						  <arguments>
+							    <argument name="type" xsi:type="string">related</argument>
+							</arguments>
+					</block> 
+				</container>
+
+ 		</referenceContainer>
+      
+    </body>
+</page>

@@ -1,0 +1,27 @@
+<?php 
+$_product = $block->getProduct();
+try {
+   $customMsg = $_product->getResource()->getAttribute('custom_out_of_stock')->getFrontend()->getValue($_product);
+} catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+    //  attribute is not exists
+}
+
+ ?>
+<?php if ($_product->isSaleable()): ?>
+	<div class="free-message">
+	<p>Free Standard Shipping on all US orders</p>
+	<p class="add-to-cart-stickers-hover-target">Free Stickers with Every Order!</p>
+	</div>
+<?php else: ?>	
+	<?php if ($customMsg):?>
+      <div class="status new_product">
+        <?php /* @escapeNotVerified */ echo $_product->getResource()->getAttribute('custom_out_of_stock')->getFrontend()->getValue($_product); ?>
+    </div>
+
+	 <?php else: ?>
+	     <div class="status outofstock">Sold Out</div>    
+	<?php endif; ?>
+
+
+<?php endif; ?>
+

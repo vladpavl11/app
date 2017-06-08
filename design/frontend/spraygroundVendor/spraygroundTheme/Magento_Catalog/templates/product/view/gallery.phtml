@@ -1,0 +1,22 @@
+
+
+
+<div class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
+    <ul>
+
+            <?php
+            $product = $block->getProduct();
+            $imageHelper = $this->helper('Magento\Catalog\Helper\Image');
+            $images = $product->getMediaGalleryImages();
+            $count = 0;
+            foreach ($images as $image) {
+                 if($count==4)break;
+                    echo ' <li><img src="'. $image['url'].'" alt="'.$image['label'].'"></li>';
+                    $count++;  
+            }
+            ?>
+
+
+      </ul>
+</div>
+

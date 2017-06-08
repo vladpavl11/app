@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+$product = $block->getItem()->getProduct();
+
+/** @var $block \Magento\Checkout\Block\Cart\Item\Renderer\Actions\Edit */
+?>
+<?php if ($block->isProductVisibleInSiteVisibility() && !$product->getIsSample()): ?>
+    <a class="action action-edit"
+       href="<?php /* @escapeNotVerified */ echo $block->getConfigureUrl() ?>"
+       title="<?php echo $block->escapeHtml(__('Edit item parameters')); ?>">
+        <span>
+        <svg viewBox="0 0 20 20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use></svg> <?php /* @escapeNotVerified */ echo __('Edit') ?>
+        </span>
+   </a>
+<?php endif ?>

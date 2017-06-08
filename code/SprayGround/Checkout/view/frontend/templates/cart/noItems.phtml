@@ -1,0 +1,29 @@
+<?php
+/**  @var $block \Magento\Checkout\Block\Cart */
+?>
+<div class="cart-container">
+    <div class="fab__cart-table__products" id="shopping-cart-table">
+      <div class="page-title-wrapper">
+        <h1 class="page-title">
+          <span class="base" data-ui-id="page-title-wrapper">
+            <?php /* @escapeNotVerified */ echo __('My Bag') ?>
+          </span>
+        </h1>
+        <div class="fab__cart-table__products__count">
+          <?php /* @escapeNotVerified */ echo __('0 items') ?>
+        </div>
+      </div>
+
+      <img src="" width="100" height="130" alt="Cart empty" />
+
+      <div class="fab__cart-table__message">
+        <?php /* @escapeNotVerified */ echo __('Your bag is currently empty.') ?>
+      </div>
+
+      <a class="fab__button fab__button--blue fab__button--bigger" href="<?php echo $block->escapeUrl($block->getContinueShoppingUrl()); ?>">
+        <?php /* @escapeNotVerified */ echo __('Keep Shopping') ?>
+      </a>
+    </div>
+    <?php echo $block->getChildHtml('shopping.cart.table.after'); ?>
+    <?php echo $block->getChildHtml('checkout.cart.noitem.invalidate'); ?>
+</div>

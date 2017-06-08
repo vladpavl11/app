@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct()
+?>
+    <div class="additional-attributes-wrapper table-wrapper col-md-4">
+       
+         <?php /* @escapeNotVerified */ echo $_product->getResource()->getAttribute('features')->getFrontend()->getValue($_product); ?>
+           
+    </div>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <!-- Add external resources -->
+        <css href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" src_type="url" />          
+		<css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" src_type="url" />
+		
+		<script data-cfasync="false" src="//use.typekit.com/fvc3xbz.js" src_type="url"/>
+		
+    </head>
+    <body>
+	    <referenceBlock name="head.additional">
+	        <block class="Magento\Framework\View\Element\Text" name="my_script">
+	            <action method="setText">
+	                <argument translate="true" name="text" xsi:type="string">
+	                     <![CDATA[<script type="text/javascript">try{Typekit.load();}catch(e){}</script>]]>
+	                      <![CDATA[<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">]]>
+	                </argument>
+	               
+	            </action>
+	        </block>
+	    </referenceBlock>
+	</body>
+</page>
+

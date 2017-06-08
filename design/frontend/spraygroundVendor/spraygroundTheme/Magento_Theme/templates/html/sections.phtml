@@ -1,0 +1,115 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+
+/**
+*  General template for displaying group of blocks devided into sections
+*/
+
+$group = $block->getGroupName();
+$groupCss = $block->getGroupCss();
+$groupBehavior = $block->getGroupBehaviour() ? $block->getGroupBehaviour() : '{"tabs":{"openedState":"active"}}';
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames($group, 'getChildHtml')):?>
+    <div class="sections <?php /* @escapeNotVerified */ echo $groupCss ?>">
+        <?php $layout = $block->getLayout(); ?>
+        <div class="section-items <?php /* @escapeNotVerified */ echo $groupCss ?>-items" data-mage-init='<?php /* @escapeNotVerified */ echo $groupBehavior ?>'>
+            <?php foreach ($detailedInfoGroup as $name):?>
+                <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html) && ($block->getUseForce() != true)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                ?>
+              <!--   <div class="section-item-title <?php /* @escapeNotVerified */ echo $groupCss ?>-item-title" data-role="collapsible">
+                    <a class="<?php /* @escapeNotVerified */ echo $groupCss ?>-item-switch" data-toggle="switch" href="#<?php /* @escapeNotVerified */ echo $alias; ?>"><?php /* @escapeNotVerified */ echo $label; ?></a>
+                </div> -->
+                <div class="section-item-content <?php /* @escapeNotVerified */ echo $groupCss ?>-item-content" id="<?php /* @escapeNotVerified */ echo $alias; ?>" data-role="content"><?php /* @escapeNotVerified */ echo $html; ?></div>
+            <?php endforeach;?>
+          
+         
+        
+        </div>
+
+
+
+
+
+
+
+       <!--  Navigaton and logo section -->
+        <?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
+        <div class="nav_wrapper">
+<!--             <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+ -->
+             <div class="hamburger hamburger--spin js-hamburger" data-action="toggle-nav">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+
+                <strong class="logo">
+                          <a class="cd-logo" href="/">
+                                <svg class="img-responsive" alt="SprayGround" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                             width="106.668px" height="406.668px" viewBox="150 -150 106.668 406.668" enable-background="new 150 -150 106.668 406.668"
+                                             xml:space="preserve">
+                                        <g>
+                                            <path fill="#FFFFFF" d="M187.426-104.301v-18.228l6.805,0.968v14.94l9.261,1.309v-11.242c0-2.695,1.475-3.505,3.582-3.216
+                                                c3.77,0.492,11.416,1.563,14.651,2.066c1.562,0.22,3.429,1.148,3.429,4.627v16.637l-6.664-0.932v-12.83l-8.188-1.146v10.899
+                                                c0,2.746-1.666,3.713-3.229,3.499c-3.676-0.521-12.646-1.742-16.313-2.297C188.795-99.568,187.426-100.766,187.426-104.301z"/>
+                                            <path fill="#FFFFFF" d="M200.897-72.575V-85.31l-13.472-1.896v-7.96l37.727,5.304c0,0,0,14.67,0,21.56
+                                                c0,2.216-1.521,3.694-3.877,3.365l-16.165-2.267C201.977-67.648,200.897-69.493,200.897-72.575z M218.489-73.194v-9.639
+                                                l-10.779-1.521v9.644L218.489-73.194z"/>
+                                            <path fill="#FFFFFF" d="M187.426-46.714l13.471-3.662v-4.767l-13.471-1.892v-8.061l37.728,5.301c0,0,0,15.484,0,22.382
+                                                c0,2.505-1.173,3.983-3.429,3.667l-17.395-2.442c-1.914-0.271-3.434-1.741-3.434-4.396v-1.59l-13.472,3.701L187.426-46.714
+                                                L187.426-46.714z M218.489-42.163v-10.515l-10.927-1.532v10.51L218.489-42.163z"/>
+                                            <path fill="#FFFFFF" d="M187.426-12.892l6.756-0.775v-11.292l-6.756-2.781v-7.913l37.728,14.564v12.635l-37.728,3.766V-12.892z
+                                                 M216.432-15.559v-1.156l-15.488-5.744v8.296L216.432-15.559z"/>
+                                            <path fill="#FFFFFF" d="M200.553,13.239l-13.127-1.846V3.525l13.127,1.853l24.601-7.354v8.494l-14.604,3.969v0.683l14.604,8.179
+                                                v7.861L200.553,13.239z"/>
+                                            <path fill="#FFFFFF" d="M187.426,28.632c0-1.933,1.318-3.529,3.334-3.246c4.205,0.59,27.385,3.848,30.422,4.275
+                                                c1.178,0.168,3.972,1.18,3.972,4.611v18.854l-6.664-0.939V37.336l-24.259-3.406v10.51l9.261,1.302v-5.016l6.811,0.96v12.973
+                                                l-22.874-3.218V28.632H187.426z"/>
+                                            <path fill="#FFFFFF" d="M187.426,74.423l13.471-3.646v-4.782l-13.471-1.894v-8.058l37.728,5.306c0,0,0,15.478,0,22.394
+                                                c0,2.493-1.173,3.969-3.429,3.653l-17.395-2.444c-1.914-0.269-3.434-1.736-3.434-4.392v-1.599l-13.472,3.709L187.426,74.423
+                                                L187.426,74.423z M218.489,78.985V68.468l-10.927-1.535v10.51L218.489,78.985z"/>
+                                            <path fill="#FFFFFF" d="M187.426,110.085l0-19.002c0-2.125,2.59-3.449,3.773-3.287c4.158,0.584,27.58,3.881,30.61,4.31
+                                                c2.313,0.326,3.342,2.881,3.342,4.715v18.134c0,2.407-1.77,3.809-3.342,3.588c-3.03-0.435-26.453-3.726-30.611-4.312
+                                                C190.016,114.069,187.426,112.208,187.426,110.085z M218.489,110.204V99.503l-24.403-3.44v10.711L218.489,110.204z"/>
+                                            <path fill="#FFFFFF" d="M187.426,123.273c0-3.276,1.465-4.668,3.967-4.312c4.558,0.639,33.761,4.74,33.761,4.74v7.961
+                                                l-30.923-4.345v10.606l30.923,4.347v7.762l-37.728-5.299V123.273z"/>
+                                            <path fill="#FFFFFF" d="M187.426,169.267l20.137-8.51v-0.586l-20.137-2.832v-7.811l37.678,5.293v7.912l-21.069,8.23v0.529
+                                                l21.069,2.963v7.82l-37.678-5.305V169.267z"/>
+                                            <path fill="#FFFFFF" d="M187.426,203.575v-21.572l37.728,5.305c0,0,0,14.766,0,21.664c0,3.518-1.623,4.641-4.652,4.217
+                                                c-3.039-0.428-23.963-3.359-28.127-3.955C189.234,208.792,187.426,206.271,187.426,203.575z M218.489,204.991v-10.564l-24.307-3.41
+                                                v10.564L218.489,204.991z"/>
+                                        </g>
+                                        <g>
+                                            <path fill="#FFFFFF" d="M206.307,229.196c-3.614,0-6.483-2.904-6.483-6.602c0-3.699,2.869-6.643,6.483-6.643
+                                                c3.616,0,6.448,2.943,6.448,6.682C212.755,226.292,209.923,229.196,206.307,229.196z M206.307,217.604
+                                                c-2.866,0-5.145,2.164-5.145,5.031c-0.037,2.787,2.277,4.912,5.107,4.912c2.868,0,5.187-2.125,5.187-4.99
+                                                C211.456,219.769,209.138,217.604,206.307,217.604z M202.968,221.573v-1.494h6.444c0.081,0.586,0.195,1.418,0.195,2.479
+                                                c0,1.219-0.195,1.766-0.509,2.199c-0.271,0.396-0.748,0.666-1.375,0.666c-0.782,0-1.297-0.59-1.533-1.338h-0.077
+                                                c-0.197,0.631-0.704,0.947-1.569,1.145c-0.985,0.191-1.339,0.346-1.576,0.477v-1.58c0.236-0.197,0.787-0.309,1.576-0.51
+                                                c0.663-0.119,0.98-0.516,0.98-1.338v-0.705H202.968L202.968,221.573z M206.584,221.614v0.703c0,0.826,0.272,1.5,0.941,1.5
+                                                c0.592,0,0.984-0.438,0.984-1.373c0-0.402-0.042-0.68-0.079-0.83H206.584L206.584,221.614z"/>
+                                        </g>
+                             </svg>
+                        </a>
+                </strong>
+        </div>
+
+
+
+
+    </div>
+<?php endif; ?>

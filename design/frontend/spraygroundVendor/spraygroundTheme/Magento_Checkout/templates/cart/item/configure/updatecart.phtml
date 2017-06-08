@@ -1,0 +1,47 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Update Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+    <li class="box-tocart fab__pdp__option fab__pdp__option--buy update">
+        <div class="fab__pdp__form">
+          <div class="fab__pdp__form__qty ">
+            <label for="qty" class="fab__pdp__heading fab__pdp__heading--quaternary"><?php /* @escapeNotVerified */ echo __('Qty') ?></label>
+            <div class="fab__select js-fabSelect">
+              <select name="qty" id="qty">
+                <?php foreach (range(1, $block->getProductDefaultQty() * 1 + 5) as $qtyIndex): ?>
+                  <option <?php echo $block->getProductDefaultQty() * 1 == $qtyIndex ? 'selected="selected"': ''; ?>><?php echo $qtyIndex; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit"
+                  title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
+                  class="action primary tocart fab__pdp__button"
+                  id="product-updatecart-button">
+              <span id="box-tocart__button-text" data-out-text="<?php echo __('out of stock — notify me')?>" data-default-text="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+          </button>
+
+          <?php echo $block->getChildHtml('', true) ?>
+    </li>
+    <script type="text/x-magento-init">
+        {
+            "#product_addtocart_form": {
+                "validation": {},
+                "addToCart": {
+                    "cartButtonId": "#product-updatecart-button",
+                    "cartForm": "#product_addtocart_form"
+                }
+            }
+        }
+    </script>
+<?php endif; ?>

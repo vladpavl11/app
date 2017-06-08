@@ -1,0 +1,105 @@
+<div class="bottom-of-scroller"></div>
+<?php
+
+$product = $block->getProduct();
+$imageHelper = $this->helper('Magento\Catalog\Helper\Image');
+
+$productImageAttr1 = $product->getCustomAttribute( 'detail_image_1' );
+$productImageAttr2 = $product->getCustomAttribute( 'detail_image_2' );
+$productImageAttr3 = $product->getCustomAttribute( 'detail_image_3' );
+$productImageAttr4 = $product->getCustomAttribute( 'detail_image_4' );
+$productImageAttr5 = $product->getCustomAttribute( 'detail_image_5' );
+$productImageAttr6 = $product->getCustomAttribute( 'detail_image_6' );
+$productImageAttr7 = $product->getCustomAttribute( 'detail_image_7' );
+$productImageAttr8 = $product->getCustomAttribute( 'detail_image_8' );
+$productImageAttr9 = $product->getCustomAttribute( 'detail_image_9' );
+$productImageAttr10 = $product->getCustomAttribute( 'detail_image_10' );
+
+if ($productImageAttr1) {
+    $image = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr1->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image; ?>" >
+</div>  
+
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+            <?php /* @escapeNotVerified */ echo $product->getResource()->getAttribute('features')->getFrontend()->getValue($product); ?>
+
+</div>  
+<?php }
+
+ if ($productImageAttr2) {
+    $image2 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr2->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image2; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr3) {
+    $image3 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr3->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image3; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr4) {
+    $image4 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr4->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image4; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr5) {
+    $image5 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr5->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image5; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr6) {
+    $image6 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr6->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image6; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr7) {
+    $image7 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr7->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image7; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr8) {
+    $image8 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr8->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image8; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr9) {
+    $image9 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr9->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image9; ?>" >
+</div>  
+<?php }
+ if ($productImageAttr10) {
+    $image10 = $imageHelper->init($product, 'detail_image_1')
+            ->setImageFile($productImageAttr10->getValue())
+            ->getUrl(); ?>
+<div class="col-md-4 col-sm-6 hidden-xs detail-shots">
+    <img src="<?php echo $image10; ?>" >
+</div>  
+<?php }
+;?>
+    
