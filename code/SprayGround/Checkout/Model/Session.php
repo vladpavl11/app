@@ -1,5 +1,5 @@
 <?php
-namespace SprayGround\Checkout\Model;
+namespace Sprayground\Checkout\Model;
 
 class Session extends \Magento\Checkout\Model\Session
 {

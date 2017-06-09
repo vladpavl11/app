@@ -3,9 +3,9 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace SprayGround\Checkout\Controller\Sidebar;
+namespace Sprayground\Checkout\Controller\Sidebar;
 
-use SprayGround\Checkout\Model\Sidebar;
+use Sprayground\Checkout\Model\Sidebar;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Response\Http;

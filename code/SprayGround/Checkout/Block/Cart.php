@@ -1,5 +1,5 @@
 <?php
-namespace SprayGround\Checkout\Block;
+namespace Sprayground\Checkout\Block;
 
 /**
  * Shopping cart block
@@ -7,7 +7,7 @@ namespace SprayGround\Checkout\Block;
 class Cart extends \Magento\Checkout\Block\Cart
 {
   /**
-   * @var \SprayGround\Checkout\Model\Samples
+   * @var \Sprayground\Checkout\Model\Samples
    */
   protected $samplesModel;
 

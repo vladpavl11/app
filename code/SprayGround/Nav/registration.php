@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'SprayGround_Nav',
+    'Sprayground_Nav',
     __DIR__
 );

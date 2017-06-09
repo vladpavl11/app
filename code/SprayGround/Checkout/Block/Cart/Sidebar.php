@@ -1,5 +1,5 @@
 <?php
-namespace SprayGround\Checkout\Block\Cart;
+namespace Sprayground\Checkout\Block\Cart;
 
 /**
  * Cart sidebar block

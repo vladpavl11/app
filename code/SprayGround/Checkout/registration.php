@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'SprayGround_Checkout',
+    'Sprayground_Checkout',
     __DIR__
 );

@@ -3,6 +3,7 @@
         <body>
       		         <referenceBlock name="category.product.addto" remove="true"/>
       		          <referenceBlock name="category.description" remove="true"/>
+      		            <referenceBlock name="page.main.title" remove="true"/>
       		        
 
         </body>

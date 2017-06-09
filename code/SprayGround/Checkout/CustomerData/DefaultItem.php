@@ -1,5 +1,5 @@
 <?php
-namespace SprayGround\Checkout\CustomerData;
+namespace Sprayground\Checkout\CustomerData;
 
 /**
  * Default item

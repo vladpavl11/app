@@ -141,6 +141,11 @@ if(scrollerswitch_active){
   });
 }
 ///////////////////////////// hover actions /////////////////////
+$('.page-header button').hover(function ()  {
+  TweenMax.to($('.block-search'), 0.4, {width:270, ease:"Elastic.easeOut"});
+},function ()  {
+    TweenMax.to($('.block-search'), 0.4, {width:56,ease:"Elastic.easeOut"});
+});
 
   TweenMax.to($('.product-item-details > .price-box'), 0, {y:"15"});
   TweenMax.to($('.add-to-cart-stickersWrapper'), 0, {y:"15"});

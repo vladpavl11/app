@@ -1,5 +1,5 @@
 <?php
-namespace SprayGround\Checkout\Helper;
+namespace Sprayground\Checkout\Helper;
 
 use Magento\Sales\Model\Order\Address;
 
