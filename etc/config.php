@@ -106,5 +106,6 @@ return array (
     'Magento_CatalogWidget' => 1,
     'Magento_Wishlist' => 1,
     'SprayGround_Checkout' => 1,
+    'SprayGround_Nav' => 1,
   ),
 );
