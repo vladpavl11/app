@@ -111,7 +111,11 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                       <?php
                         $newsFromDate = $_product->getResource()->getAttribute('news_from_date')->getFrontend()->getValue($_product);
                          $newsToDate = $_product->getResource()->getAttribute('news_to_date')->getFrontend()->getValue($_product);
-                         $customMsg = $_product->getResource()->getAttribute('custom_out_of_stock')->getFrontend()->getValue($_product);
+                         $customMsg="";
+                         if (is_object($_product->getResource()->getAttribute('custom_out_of_stock')) ) {
+                             $customMsg = $_product->getResource()->getAttribute('custom_out_of_stock')->getFrontend()->getValue($_product);
+                         }
+
                         ?>
                          <?php if (($newsFromDate && $newsToDate) && ($newsToDate >= $date)): ?>
                             <span class="status new_product">New Arrival</span>
