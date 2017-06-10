@@ -18,12 +18,12 @@
     <?php echo $block->getBlockHtml('formkey'); ?>
     <div id="shopping-cart-table"
         data-mage-init='{ "checkout-cart": {} }'
-        class="fab__cart-table__products cart table-wrapper<?php echo $mergedCells == 2 ? ' detailed' : ''; ?>">
+        class="spray__cart-table__products cart table-wrapper<?php echo $mergedCells == 2 ? ' detailed' : ''; ?>">
         <div class="page-title-wrapper">
           <h1 class="page-title">
             <span class="base" data-ui-id="page-title-wrapper"><?php echo __('My Bag'); ?></span>
           </h1>
-          <div class="fab__cart-table__products__count">
+          <div class="spray__cart-table__products__count">
             <?php echo $block->getItemsCount(); ?> <?php echo $block->getItemsCount() > 1 ? __('items') : __('item'); ?>
           </div>
         </div>
@@ -31,23 +31,6 @@
             <?php echo $block->getItemHtml($_item) ?>
         <?php endforeach ?>
     </div>
-
-    <?php if($sampleItems = $block->getSampleItems()): ?>
-    <div class="fab__cart-table__products _js-fabToggleContent">
-        <div class="page-title-wrapper" role="_tab">
-          <h1 class="page-title">
-            <?php echo __('Free Samples')?>
-          </h1>
-        </div>
-        <div class="_js-fabMobileToggled" role="_tabpanel">
-          <div>
-            <?php foreach($sampleItems as $sampleItem): ?>
-              <?php echo $this->getItemHtml($sampleItem) ?>
-            <?php endforeach; ?>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
 </form>
 <?php echo $block->getChildHtml('checkout.cart.order.actions') ?>
 <?php echo $block->getChildHtml('shopping.cart.table.after'); ?>

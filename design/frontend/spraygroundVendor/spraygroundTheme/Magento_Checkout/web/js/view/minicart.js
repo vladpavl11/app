@@ -8,9 +8,9 @@ define([
     'jquery',
     'ko',
     'underscore',
-    'fabMiniCartToggle',
+    'sprayMiniCartToggle',
     'sidebar'
-], function (Component, customerData, $, ko, _, fabMiniCartToggle) {
+], function (Component, customerData, $, ko, _, sprayMiniCartToggle) {
     'use strict';
 console.log('cartmini');
     var sidebarInitialized = false,
@@ -163,7 +163,7 @@ console.log('cartmini');
         },
 
         initToggle: function () {
-          fabMiniCartToggle.init();
+          sprayMiniCartToggle.init();
         }
     });
 });

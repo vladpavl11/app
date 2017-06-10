@@ -118,8 +118,8 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
       </tr>
   </tbody>
 <?php else: ?>
-<div class="fab__cart-table__product">
-  <div class="fab__cart-table__product__info">
+<div class="spray__cart-table__product">
+  <div class="spray__cart-table__product__info">
 
     <?php if ($block->hasProductUrl()):?>
       <a class="product-item-photo" href="<?php /* @escapeNotVerified */ echo $block->getProductUrl() ?>" tabindex="-1" title="<?php echo $block->escapeHtml($block->getProductName()) ?>">
@@ -154,12 +154,12 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
 
     </div><!--
       NOTE: no whitespace
-    --><?php if (!$isSample): ?><ul class="fab__cart-table__product__vars"><!--
+    --><?php if (!$isSample): ?><ul class="spray__cart-table__product__vars"><!--
           <?php if ($superAttributeOptions = $block->getSuperAttributeOptions()): // getOptionList ?>
           <?php foreach ($superAttributeOptions as $superAttributeOption) : ?>
             --><li>
                 <label class="label"><span><?php echo $block->escapeHtml($superAttributeOption['label']); ?></span></label>
-                <div class="fab__select fab__select--gray js-fabSelect">
+                <div class="spray__select spray__select--gray js-spraySelect">
                   <select
                     data-cart-item="<?php echo $_item->getId(); ?>"
                     data-cart-item-sku="<?php echo $product->getSku(); ?>"
@@ -177,7 +177,7 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
         <div class="field qty">
           <label class="label" for="cart-6375-qty"><span>Qty</span></label>
 
-          <div class="fab__select fab__select--gray js-fabSelect">
+          <div class="spray__select spray__select--gray js-spraySelect">
             <select id="cart-<?php /* @escapeNotVerified */ echo $_item->getId() ?>-qty"
               name="cart[<?php /* @escapeNotVerified */ echo $_item->getId() ?>][qty]"
               data-cart-item-id="<?php /* @escapeNotVerified */ echo $_item->getSku() ?>"

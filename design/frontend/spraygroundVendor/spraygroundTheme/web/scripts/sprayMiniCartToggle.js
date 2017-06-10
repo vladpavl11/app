@@ -46,7 +46,7 @@ console.log('test');
        _el.addEventListener('click', toggleCart);
      });
 
-     var cartCloser = document.querySelectorAll('.fab__minicart .action.close');
+     var cartCloser = document.querySelectorAll('.spray__minicart .action.close');
      Array.prototype.forEach.call(cartCloser, function(_el) {
        _el.addEventListener('click', closeCart);
      });

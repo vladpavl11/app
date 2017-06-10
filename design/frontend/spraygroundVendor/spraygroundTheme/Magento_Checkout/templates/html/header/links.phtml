@@ -3,14 +3,14 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $customer = $objectManager->get('Magento\Customer\Model\Session');
 ?>
 
-<ul class="fab__header--checkout__nav header links">
+<ul class="spray__header--checkout__nav header links">
     <li class="back-link">
       <a href="<?php echo $block->getUrl('*/cart') ?>"><?php echo __('back to shopping bag') ?></a>
     </li>
 
     <li class="authorization-link">
       <?php if(!$customer->isLoggedIn()): ?>
-        <a href="#" data-fab-modal="fab-login" id="header-login">
+        <a href="#" data-spray-modal="spray-login" id="header-login">
           <?php echo __('Log In')?>
         </a>
       <?php endif; ?>

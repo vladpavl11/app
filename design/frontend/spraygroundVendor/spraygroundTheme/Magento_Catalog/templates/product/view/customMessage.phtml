@@ -1,7 +1,11 @@
 <?php 
 $_product = $block->getProduct();
+$customMsg="";
 try {
-   $customMsg = $_product->getResource()->getAttribute('custom_out_of_stock')->getFrontend()->getValue($_product);
+    if (is_object($_product->getResource()->getAttribute('custom_out_of_stock')) ) {
+        $customMsg = $_product->getResource()->getAttribute('custom_out_of_stock')->getFrontend()->getValue($_product);
+    }
+
 } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
     //  attribute is not exists
 }

@@ -11,11 +11,11 @@
 <?php $_product = $block->getProduct(); ?>
 <?php $buttonTitle = __('Update Cart'); ?>
 <?php if ($_product->isSaleable()): ?>
-    <li class="box-tocart fab__pdp__option fab__pdp__option--buy update">
-        <div class="fab__pdp__form">
-          <div class="fab__pdp__form__qty ">
-            <label for="qty" class="fab__pdp__heading fab__pdp__heading--quaternary"><?php /* @escapeNotVerified */ echo __('Qty') ?></label>
-            <div class="fab__select js-fabSelect">
+    <li class="box-tocart spray__pdp__option spray__pdp__option--buy update">
+        <div class="spray__pdp__form">
+          <div class="spray__pdp__form__qty ">
+            <label for="qty" class="spray__pdp__heading spray__pdp__heading--quaternary"><?php /* @escapeNotVerified */ echo __('Qty') ?></label>
+            <div class="spray__select js-spraySelect">
               <select name="qty" id="qty">
                 <?php foreach (range(1, $block->getProductDefaultQty() * 1 + 5) as $qtyIndex): ?>
                   <option <?php echo $block->getProductDefaultQty() * 1 == $qtyIndex ? 'selected="selected"': ''; ?>><?php echo $qtyIndex; ?></option>
@@ -26,7 +26,7 @@
 
           <button type="submit"
                   title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
-                  class="action primary tocart fab__pdp__button"
+                  class="action primary tocart spray__pdp__button"
                   id="product-updatecart-button">
               <span id="box-tocart__button-text" data-out-text="<?php echo __('out of stock — notify me')?>" data-default-text="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
           </button>

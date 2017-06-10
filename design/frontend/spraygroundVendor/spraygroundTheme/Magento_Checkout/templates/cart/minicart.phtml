@@ -10,9 +10,9 @@
 ?>
 
 <div data-block="minicart" class="minicart-wrapper quickcart-wrapper">
-    <a class="fab__cart__icon fab__header__top__sticky action showcart" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
+    <a class="spray__cart__icon spray__header__top action showcart" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
-        <span class="fab__visually-hidden text"><?php /* @escapeNotVerified */ echo __('My Cart'); ?></span>
+        <span class="spray__visually-hidden text"><?php /* @escapeNotVerified */ echo __('My Cart'); ?></span>
         <img src="" alt="" width="22" height="28">
         <span class="counter qty empty"
               data-bind="css: { empty: !!getCartParam('summary_count') == false }">
@@ -25,7 +25,7 @@
             </span>
         </span>
     </a>
-    <div class="fab__minicart" id="fab__minicart">
+    <div class="spray__minicart" id="spray__minicart">
       <?php if ($block->getIsNeedToDisplaySideBar()): ?>
             <div class="block block-minicart empty">
               <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">

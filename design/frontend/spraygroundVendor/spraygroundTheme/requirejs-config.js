@@ -8,7 +8,7 @@ var config = {
     'TweenMax': 'js/gsap/TweenMax',
     'bootstrap': 'js/boot/bootstrap',
     'checkout-cart': 'Magento_Checkout/js/cart',
-     "fabMiniCartToggle": "scripts/fabMiniCartToggle",
+     "sprayMiniCartToggle": "scripts/sprayMiniCartToggle",
   },
     map: {
         '*': {
