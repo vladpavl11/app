@@ -44,6 +44,9 @@
         z-index: 14;
     }
 }
+////////////////////////// plus animation/////////////
+
+
 .accordion-toggle {
   position: relative;
 }
@@ -57,7 +60,7 @@
   width: 14px;
   height: 4px;
   margin-top: -2px;
-  background-color: #000;
+  background-color: #fff;
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
@@ -65,21 +68,30 @@
   transition: all 0.25s;
 }
 .accordion-toggle::before {
-  -webkit-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  opacity: 0;
+  opacity: 1;
 }
-.accordion-toggle.collapsed::before {
-  -webkit-transform: rotate(0deg);
+.accordion-toggle::after {
+   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   opacity: 1;
+}
+
+
+.accordion-toggle.collapsed::before {
+    -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+ 
 }
 .accordion-toggle.collapsed::after {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+   opacity: 0;
 }
 //
 //  Mobile
@@ -92,25 +104,25 @@
         .parent {
             .level-top {
                 position: relative;
-                .lib-icon-font(
-                @_icon-font-content: @icon-down,
-                @_icon-font-size: 42px,
-                @_icon-font-position: after,
-                @_icon-font-display: block
-                );
+                // .lib-icon-font(
+                // @_icon-font-content: @icon-down,
+                // @_icon-font-size: 30px,
+                // @_icon-font-position: after,
+                // @_icon-font-display: block
+                // );
 
-                &:after {
-                    position: absolute;
-                    right: 7px;
-                    top: -8px;
-                }
+                // &:after {
+                //     position: absolute;
+                //     right: 7px;
+                //     top: -8px;
+                // }
 
-                &.ui-state-active {
-                    .lib-icon-font-symbol(
-                    @_icon-font-content: @icon-up,
-                    @_icon-font-position: after
-                    );
-                }
+                // &.ui-state-active {
+                //     .lib-icon-font-symbol(
+                //     @_icon-font-content: @icon-up,
+                //     @_icon-font-position: after
+                //     );
+                // }
             }
         }
     }
@@ -120,17 +132,17 @@
         .lib-css(transition, left .3s, 1);
         height: 100%;
         left: -80%;
-        left: calc(~'-1 * (26% - @{active-nav-indent})');
+        left: calc(~'-1 * (18% - @{active-nav-indent})');
         overflow: auto;
         position: fixed;
         top: 0;
         width: 80%;
-        width: calc(~'26% - @{active-nav-indent}');
+        width: calc(~'18% - @{active-nav-indent}');
 
         .switcher {
             border-top: 1px solid @color-gray82;
             font-size: 1.6rem;
-            font-weight: 700;
+            font-weight: 500;
             margin: 0;
             padding: .8rem 3.5rem .8rem 2rem;
 
@@ -184,7 +196,7 @@
 
                 &.greet.welcome {
                     border-top: 1px solid @color-gray82;
-                    font-weight: 700;
+                    font-weight: 500;
                     padding: .8rem @indent__base;
                 }
 
@@ -198,7 +210,7 @@
                 .lib-css(color, @navigation-level0-item__color);
                 .lib-css(text-decoration, @navigation-level0-item__text-decoration);
                 display: block;
-                font-weight: 700;
+                font-weight: 500;
                 padding: .8rem @indent__base;
             }
 
@@ -240,7 +252,7 @@
     .nav-open {
         .page-wrapper {
             // left: 80%;
-            // left: calc(~'26% - @{active-nav-indent}');
+            // left: calc(~'18% - @{active-nav-indent}');
         }
 
         .nav-sections {
@@ -269,6 +281,8 @@
     .nav-sections-items {
         .lib-clearfix();
         position: relative;
+        display: table;
+        height: 100%;
         z-index: 1;
     }
 
@@ -300,7 +314,8 @@
         box-sizing: border-box;
         float: right;
         margin-left: -100%;
-        margin-top: 71px;
+        height: 100%;
+        display: table;
         width: 100%;
 
         &.active {
@@ -336,10 +351,7 @@
             }
         }
     }
-nav{
-    display: table;
-    float:left;
-}
+
 // //
 // //  Desktop
 // //  _____________________________________________

@@ -20,54 +20,18 @@
 
     <div class="nav-menu-main">
 
-		<div data-role="collapsible">
-	    	<div data-role="trigger">
+		<div >
+	    	<div >
 	    		 <a href="#shop-nav" class="nav_element accordion-toggle collapse" id="shop-nav-link">SHOP</a>
 	    	</div>
 		</div>
-		<div data-role="content">
+		<div class="main_nav">
 	        <ul data-mage-init='{"menu":{"delay":150,"responsive":false, "expanded":false, "position":{"my":"left top","at":"left bottom"}}}'>
 	                <?php /* @escapeNotVerified */ echo $_menu; ?>
 	                <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
 	        </ul>
 		</div> 
     </div>
-    <ul>
     <!-- /// static navigation from CMS Block -->
     <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('side_nav')->toHtml();?>
-    <ul>
 </nav>
-
-
-
-
-<div id="nav2">
-    <div data-role="collapsible">
-        <div data-role="trigger">
-            <span>Title 1</span>
-        </div>
-    </div>
-    <div data-role="content">Content 1</div>
-
-    <div data-role="collapsible">
-        <div data-role="trigger">
-            <span>Title 2</span>
-        </div>
-    </div>
-    <div data-role="content">Content 2</div>
-
-    <div data-role="collapsible">
-        <div data-role="trigger">
-            <span>Title 3</span>
-        </div>
-    </div>
-    <div data-role="content">Content 3</div>
-</div>
-
-<script>
-    require([
-        'jquery',
-        'accordion'], function ($) {
-        $("#nav").accordion();
-    });
-</script>

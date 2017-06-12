@@ -140,6 +140,27 @@ if(scrollerswitch_active){
     resetScroller();
   });
 }
+/////// nav click ////////
+$(".parent > a").addClass('accordion-toggle collapse');
+
+
+
+$(".parent > a").attr("href", "#");
+
+$( ".parent > a" ).click(function() {
+  $( ".submenu" ).toggle("fast");
+  $(".parent > a" ).toggleClass('collapsed');
+});
+$( "#shop-nav-link" ).click(function() {
+  $( ".main_nav" ).toggle("fast");
+  $(this).toggleClass('collapsed');
+   $('.level-top').removeClass('ui-menu-item');
+    $('.submenu').removeClass('ui-menu');
+   
+});
+ 
+
+
 ///////////////////////////// hover actions /////////////////////
 $('.page-header button').hover(function ()  {
   TweenMax.to($('.block-search'), 0.4, {width:270, ease:"Elastic.easeOut"});

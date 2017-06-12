@@ -8,3 +8,9 @@ etc/env.php
 etc/vendor_path.php
 
 etc/NonComposerComponentRegistration.php
+
+functions.php
+
+autoload.php
+
+bootstrap.php

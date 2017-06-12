@@ -17,7 +17,7 @@ class TopMenu implements ObserverInterface
         $menu=$observer->getMenu();
         $transportObject=$observer->getData('transportObject');
         $html=$transportObject->getHtml();
-        $transportObject->setHtml('Vodka!');
         //Observer execution code...
     }
 }
+
